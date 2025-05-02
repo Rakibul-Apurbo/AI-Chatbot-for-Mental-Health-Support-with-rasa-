@@ -1,0 +1,14 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "deny",
+  "3": "explain_mood",
+  "4": "goodbye",
+  "5": "greet",
+  "6": "mood_anxious",
+  "7": "mood_depressed",
+  "8": "mood_great",
+  "9": "mood_neutral",
+  "10": "mood_unhappy",
+  "11": "self_harm"
+}

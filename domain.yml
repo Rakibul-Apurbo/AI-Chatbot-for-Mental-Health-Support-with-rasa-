@@ -1,0 +1,89 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - mood_neutral 
+  - explain_mood  
+  - mood_anxious       
+  - mood_depressed    
+  - self_harm  
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text:  "I know things might seem overwhelming right now,but remember, you have the strength to get through this. Every day brings new hope and small victories. Take a deep breath, and know that I'm here cheering you on every step of the way!"
+
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye, Have a nice day"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  #new responses 
+  utter_ask_more:
+  - text: "I see. Could you tell me a little more about how you're feeling?"
+  - text: "That makes sense. What's been on your mind lately?"
+
+  utter_acknowledge:
+  - text: "I hear you. It's completely okay to feel that way."
+  - text: "That sounds valid. Sometimes, just talking about it helps!"
+
+  # additional support
+  utter_offer_support:
+  - text: "I'm here to help. Would you like to try some relaxation techniques or talk more about your feelings?"  
+
+  # anxiety support.
+  utter_anxiety_support:
+  - text: "I sense you're feeling anxious. Would you like to try some deep breathing exercises or talk about what's causing the anxiety?" 
+  - text: "Anxiety can be overwhelming. I'm here to help you calm down with some relaxation techniques or simply by listening."
+
+  # depression support.
+  utter_depressed_support:
+  - text: "I'm really sorry to hear you're feeling depressed. Sometimes talking about it or trying calming techniques can help."  
+  - text: "It sounds like you're having a tough time. I'm here to listen if you want to share more."
+
+  #self harm need to add more valid informations to contact
+  utter_self_harm_help:
+  - text: >-
+      I'm truly sorry you're feeling this deep pain. Your well-being matters so much, and I care about you.
+      It sounds like you're hurting right now. Please remember that you don't have to face this alone.
+      If you're feeling unsafe or overwhelmed, I strongly encourage you to reach out to someone immediately—
+      whether it's a trusted friend, family member, or mental health professional. If you ever feel in immediate danger,
+      please call your local emergency services. You deserve support, and help is available.
+      Please consider talking to someone who can help you through this difficult time.
+      Your life is important. 
+      You can visit them: https://www.sajida.org/engage-with-us/contact-us
+                          https://bdpsychiatriccare.com/contact.html
+                          https://niramoyhospital.org/contact/
+
+#for storing in db      
+slots:
+  last_bot_response:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+    
+actions:
+  - action_log_user_message
+  - action_log_bot_response
+ 
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

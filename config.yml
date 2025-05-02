@@ -1,0 +1,46 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# The assistant project unique identifier
+# This default value must be replaced with a unique assistant name within your deployment
+assistant_id: 20250214-203359-scalding-isotope
+
+# Configuration for Rasa NLU.
+# The language of the assistant.
+language: en
+
+# Define the NLU pipeline components. These components work together to process and understand user input.
+pipeline:
+  - name: WhitespaceTokenizer          # Splits text based on whitespace
+  - name: RegexFeaturizer              # Uses regular expressions to extract features
+  - name: LexicalSyntacticFeaturizer   # Uses lexical and syntactic features (e.g., part-of-speech tags)
+  - name: CountVectorsFeaturizer        # Converts text into a vector based on word counts
+  - name: CountVectorsFeaturizer        # Character-level vectorization to capture subword information
+    analyzer: char_wb                  # Analyzes text at the character level with word boundaries
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier                # A multi-task model for intent classification and entity extraction
+    epochs: 100
+    constrain_similarities: true       # Constraint to improve classification performance
+    max_seq_length: 512
+  - name: EntitySynonymMapper           # Maps different entity synonyms to a common value
+#  - name: ResponseSelector              # Helps to select the most appropriate response from a set of candidate responses
+#    epochs: 100
+#    constrain_similarities: true       # Constraint to improve selection performance
+  - name: FallbackClassifier
+    threshold: 0.01
+    ambiguity_threshold: 0.01
+
+
+# Configuration for Rasa Core
+policies:
+  - name: MemoizationPolicy             # Remembers exact conversation paths for faster and predictable responses
+  - name: RulePolicy                    # Uses defined rules to manage the conversation flow
+  - name: UnexpecTEDIntentPolicy        # Handles unexpected intents and guides the conversation accordingly
+    max_history: 10                    # Considers the last 10 turns of the conversation
+    epochs: 100                        # Number of training epochs for this policy
+  - name: TEDPolicy                     # A transformer-based policy for managing complex conversation flows
+    max_history: 10                     # Considers the last 10 conversation turns
+    epochs: 100                        # Number of training epochs
+    constrain_similarities: true       # Constrains similarity predictions to improve performance

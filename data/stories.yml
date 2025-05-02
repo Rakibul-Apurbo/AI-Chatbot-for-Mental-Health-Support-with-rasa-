@@ -1,0 +1,106 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: action_log_user_message    
+  - action: utter_greet              
+  - action: action_log_bot_response   
+  - intent: mood_great
+  - action: action_log_user_message    
+  - action: utter_happy              
+  - action: action_log_bot_response   
+
+
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: action_log_user_message    
+  - action: utter_greet              
+  - action: action_log_bot_response   
+  - intent: mood_unhappy
+  - action: action_log_user_message    
+  - action: utter_cheer_up           
+  - action: action_log_bot_response   
+  - action: utter_did_that_help      
+  - action: action_log_bot_response  
+  - intent: affirm
+  - action: action_log_user_message    
+  - action: utter_happy              
+  - action: action_log_bot_response  
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: action_log_user_message    
+  - action: utter_greet              
+  - action: action_log_bot_response   
+  - intent: mood_unhappy
+  - action: action_log_user_message    
+  - action: utter_cheer_up           
+  - action: action_log_bot_response   
+  - action: utter_did_that_help      
+  - action: action_log_bot_response   
+  - intent: deny
+  - action: action_log_user_message    
+  - action: utter_ask_more           
+  - action: action_log_bot_response   
+
+# new neutral path 
+- story: neutral path  
+  steps:  
+  - intent: greet
+  - action: action_log_user_message   
+  - action: utter_greet              
+  - action: action_log_bot_response   
+  - intent: mood_neutral
+  - action: action_log_user_message    
+  - action: utter_ask_more           
+  - action: action_log_bot_response   
+  - intent: explain_mood
+  - action: action_log_user_message    
+  - action: utter_acknowledge        
+  - action: action_log_bot_response   
+  - action: utter_goodbye            
+  - action: action_log_bot_response   
+
+
+  # Anxiety path
+- story: anxiety path
+  steps:
+  - intent: greet
+  - action: action_log_user_message    
+  - action: utter_greet              
+  - action: action_log_bot_response   
+  - intent: mood_anxious
+  - action: action_log_user_message    
+  - action: utter_anxiety_support    
+  - action: action_log_bot_response   
+  - action: utter_did_that_help      
+  - action: action_log_bot_response   
+  - intent: affirm
+  - action: action_log_user_message    
+  - action: utter_happy              
+  - action: action_log_bot_response    
+
+  # Depressed path
+- story: depressed path
+  steps:
+  - intent: greet
+  - action: action_log_user_message    
+  - action: utter_greet             
+  - action: action_log_bot_response   
+  - intent: mood_depressed
+  - action: action_log_user_message    
+  - action: utter_depressed_support  
+  - action: action_log_bot_response   
+  - action: utter_did_that_help      
+  - action: action_log_bot_response   
+  - intent: deny
+  - action: action_log_user_message    
+  - action: utter_offer_support      
+  - action: action_log_bot_response   

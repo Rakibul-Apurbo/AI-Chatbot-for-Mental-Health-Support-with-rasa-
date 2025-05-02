@@ -1,0 +1,62 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "bot_challenge": 2,
+        "deny": 3,
+        "explain_mood": 4,
+        "goodbye": 5,
+        "greet": 6,
+        "mood_anxious": 7,
+        "mood_depressed": 8,
+        "mood_great": 9,
+        "mood_neutral": 10,
+        "mood_unhappy": 11,
+        "nlu_fallback": 12,
+        "out_of_scope": 13,
+        "restart": 14,
+        "self_harm": 15,
+        "session_start": 16
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_log_user_message": 13,
+        "action_log_bot_response": 14,
+        "utter_acknowledge": 15,
+        "utter_anxiety_support": 16,
+        "utter_ask_more": 17,
+        "utter_cheer_up": 18,
+        "utter_depressed_support": 19,
+        "utter_did_that_help": 20,
+        "utter_goodbye": 21,
+        "utter_greet": 22,
+        "utter_happy": 23,
+        "utter_iamabot": 24,
+        "utter_offer_support": 25,
+        "utter_self_harm_help": 26
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

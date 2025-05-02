@@ -1,0 +1,196 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremely sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  # neutral mood detect
+  - intent: mood_neutral
+    examples: |
+      - I feel okay
+      - I'm neutral
+      - Nothing special today
+      - Just another day
+      - I don't feel much today
+      - Meh, it's fine
+      - Not good, not bad
+      - I'm feeling so-so
+      - I guess I'm alright
+      - Just the usual
+      - It's an average day
+      - I feel normal
+      - I don't really know how I feel
+      - Nothing exciting happening
+      - Just going with the flow
+      - I'm doing okay, I guess
+      - No strong feelings today
+      - Kind of in between
+      - A bit tired, but nothing serious
+      - I'm just existing today
+
+  # further confirmation for bot understanding
+  - intent: explain_mood
+    examples: |
+      - Just feeling kind of off
+      - I don't know, just one of those days
+      - I feel okay, but something's missing
+      - I can't really explain it, just neutral
+      - Nothing major, just going through the motions
+      - It's not a bad day, but not a great one either
+      - I guess I just feel kind of empty
+      - It's hard to describe, just feeling average
+      - Not sad, not happy, just... here
+      - I feel neither good nor bad
+      - I'm in the middle, not up or down
+      - Just having a normal day, nothing special
+      - Two instances of possible auditory hallucinations as a child that still confuse me; what do you guys think?
+      - I'm done
+      - Possible body dysmorphia?
+      - poor mental health and moving across the country?
+      - I spiral into obsessions about fictional characters to a point that it affects my life.
+      - How do I go about getting medicated for mental illness as an 18 year old on my parents' health insurance without them finding out?
+      - Advice on how to find and get comfortable with a new therapist? I've had some bad ones and I keep getting performance anxiety!
+      - I've been trying.
+      - Just feeling really panicky right now.
+      - I nearly had a panic attack at the seaside the other day.
+      - My mental health is in the bin
+      - I need help starting.
+      - Am I pathetic for doing this?
+      - Please someone help me
+      - Growing Up with a Schizophrenic Mom, Bi-Polar Grandma, and Drug Addicted Dad
+      - I don't think I feel the way I should about my family
+      - ADHD unable to form relationships
+      - I have been feeling down
+      - Is my relationship with my father normal? Am I a psychopath?
+      - I feel like I don't deserve to go to therapy
+      - Should I ask my parents to transfer schools?
+      - Mon mélancolie
+      - I think I might have some trauma. Or I'm just a bitch.
+      - Hoping someone out there can give me hope.
+      - I turned 18 this summer, and I can't help but visualize myself in a dark room with 8 year old me.
+      - I'm scared my friend will fall down a path of violence and I don't know how to help him.
+      - When enough is enough
+      - I'm 29 and have been diagnosed with bipolar for 7 years. I'm thinking of "coming out" on New Year's Day, seems fitting for the start of 2021.
+      - My mother is taking a toll on my mental health.
+      - I feel like I was never a child
+      - I'm finding it hard to cope
+      - I miss psychiatry and those times.
+      - The story of my battle with depression mainly, don't know the correct flair.
+      - I started cutting
+      - Fear of abandonment
+
+  # to sense anxiousness 
+  - intent: mood_anxious
+    examples: |
+      - I'm feeling anxious
+      - I feel nervous all the time
+      - I'm really worried
+      - Anxiety is overwhelming
+      - I feel so anxious
+      - My anxiety is getting worse
+      - Looking to be supported and support others like me who suffer from panic disorder and depression
+
+  # to sense depression
+  - intent: mood_depressed
+    examples: |
+      - I feel depressed
+      - I'm feeling really low
+      - I'm in a dark place
+      - I don't see the point in anything
+      - I'm so down
+      - I feel hopeless
+
+  # to sense self harm
+  - intent: self_harm
+    examples: |
+      - I want to hurt myself
+      - I feel like ending my life
+      - I'm thinking about suicide
+      - I can't go on like this
+      - I feel so worthless, I want to disappear
