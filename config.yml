@@ -33,7 +33,7 @@ pipeline:
     ambiguity_threshold: 0.01
 
 
-## Configuration for Rasa Core
+# Configuration for Rasa Core
 policies:
   - name: MemoizationPolicy             # Remembers exact conversation paths for faster and predictable responses
   - name: RulePolicy                    # Uses defined rules to manage the conversation flow
